@@ -15,10 +15,13 @@
 # limitations under the License.
 #
 import webapp2
+from synonymly import synonymly
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        synonymly = synonymly()
+        message = synonymly.getWord()
+        self.response.write('Hello world!' + message)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
