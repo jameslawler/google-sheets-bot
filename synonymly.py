@@ -1,26 +1,29 @@
 # -*- coding: utf-8 -*-
 
+import gaenv_lib
 import gspread
 from synonyms import synonyms
 from messages import messages
 from formatter import formatter
-from twitterclient import twitterclient
 from audit import audit
 
 class synonymly:
 
-    def getWord(self):
+	def __init__(self, name):
+		self.name = name
+
+	def getWord(self):
 		print "Synonymity - English"
 		print "Work in Progress"
 
-		synonyms = synonyms()
-		synonym = synonyms.random("English", "Beginner")
+		synonymsObj = synonyms()
+		synonym = synonymsObj.random("English", "Beginner")
 
-		messages = messages()
-		message = messages.random("English")
+		messagesObj = messages()
+		message = messagesObj.random("English")
 
-		formatter = formatter()
-		formattedMessage = formatter.format(message, synonym)
+		formatterObj = formatter()
+		formattedMessage = formatterObj.format(message, synonym)
 
 		#twitter = twitterclient()
 		#twitter.tweet(formattedMessage)
@@ -30,4 +33,3 @@ class synonymly:
 
 		print "Finished"
 		return formattedMessage
-

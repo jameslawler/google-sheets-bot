@@ -14,13 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import gaenv_lib
 import webapp2
 from synonymly import synonymly
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        synonymly = synonymly()
-        message = synonymly.getWord()
+        synonymlyObj = synonymly("test")
+        message = synonymlyObj.getWord()
         self.response.write('Hello world!' + message)
 
 app = webapp2.WSGIApplication([
