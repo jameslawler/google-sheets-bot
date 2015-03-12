@@ -1,3 +1,4 @@
 docopt==0.6.2
 gaenv==0.1.8.post0
-gspread==0.2.2
+gspread==0.2.3
+tweepy==2.2
