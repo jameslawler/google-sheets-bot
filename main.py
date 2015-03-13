@@ -22,7 +22,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         synonymlyObj = synonymly("test")
         message = synonymlyObj.getWord()
-        self.response.write('Hello world!' + message)
+        self.response.write(message)
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
