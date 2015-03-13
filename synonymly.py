@@ -9,10 +9,7 @@ from twitterclient import twitterclient
 
 class synonymly:
 
-    def __init__(self, name):
-        self.name = name
-
-    def getWord(self):
+    def run(self):
         print "Synonymity - English"
         print "Work in Progress"
 

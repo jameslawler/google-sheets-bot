@@ -20,9 +20,9 @@ from synonymly import synonymly
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        synonymlyObj = synonymly("test")
-        message = synonymlyObj.getWord()
-        self.response.write(message)
+        synonymlyObj = synonymly()
+        synonymlyObj.run()
+        self.response.write("Finished")
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
