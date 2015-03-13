@@ -5,9 +5,16 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: .*
-  script: main.app
+-   url: /tweet/english/beginner
+    script: main.app
+    login: admin
+-   url: /tweet/english/intermediate
+    script: main.app
+    login: admin
+-   url: /tweet/english/advanced
+    script: main.app
+    login: admin
 
 libraries:
-- name: webapp2
-  version: "2.5.2"
+-   name: webapp2
+    version: "2.5.2"

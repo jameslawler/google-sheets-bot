@@ -9,15 +9,18 @@ from twitterclient import twitterclient
 
 class synonymly:
 
+    def __init__(self, language, level):
+        self.language = language
+        self.level = level
+
     def run(self):
-        print "Synonymity - English"
-        print "Work in Progress"
+        print "Synonymity - " + self.language + " - " + self.level
 
         synonymsObj = synonyms()
-        synonym = synonymsObj.random("English", "Beginner")
+        synonym = synonymsObj.random(self.language, self.level)
 
         messagesObj = messages()
-        message = messagesObj.random("English")
+        message = messagesObj.random(self.language)
 
         formatterObj = formatter()
         formattedMessage = formatterObj.format(message, synonym)
@@ -26,6 +29,6 @@ class synonymly:
         twitter.tweet(formattedMessage)
 
         auditObj = audit()
-        auditObj.save("English", synonym, "Twitter", formattedMessage)
+        auditObj.save(self.language, synonym, "Twitter", formattedMessage)
 
         print "Finished"

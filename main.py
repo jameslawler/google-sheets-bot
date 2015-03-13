@@ -18,12 +18,26 @@ import gaenv_lib
 import webapp2
 from synonymly import synonymly
 
-class MainHandler(webapp2.RequestHandler):
+class EnglishBeginner(webapp2.RequestHandler):
     def get(self):
-        synonymlyObj = synonymly()
+        synonymlyObj = synonymly("English", "Beginner")
+        synonymlyObj.run()
+        self.response.write("Finished")
+
+class EnglishIntermediate(webapp2.RequestHandler):
+    def get(self):
+        synonymlyObj = synonymly("English", "Intermediate")
+        synonymlyObj.run()
+        self.response.write("Finished")
+
+class EnglishAdvanced(webapp2.RequestHandler):
+    def get(self):
+        synonymlyObj = synonymly("English", "Advanced")
         synonymlyObj.run()
         self.response.write("Finished")
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/tweet/english/beginner', EnglishBeginner),
+    ('/tweet/english/intermediate', EnglishIntermediate),
+    ('/tweet/english/advanced', EnglishAdvanced),
 ], debug=True)

@@ -1,0 +1,5 @@
+cron:
+-   description: test tweet
+    url: /tweet/english/beginner
+    schedule: every friday 20:20
+    timezone: Europe/Berlin
