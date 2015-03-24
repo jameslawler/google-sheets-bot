@@ -14,8 +14,6 @@ class synonymly:
         self.level = level
 
     def run(self):
-        print "Synonymity - " + self.language + " - " + self.level
-
         synonymsObj = synonyms()
         synonym = synonymsObj.random(self.language, self.level)
 
@@ -30,5 +28,3 @@ class synonymly:
 
         auditObj = audit()
         auditObj.save(self.language, synonym, "Twitter", formattedMessage)
-
-        print "Finished"
