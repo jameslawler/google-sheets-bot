@@ -1,5 +1,9 @@
 cron:
--   description: test tweet
+-   description: Synonymly English Beginner
     url: /tweet/english/beginner
-    schedule: every friday 20:20
+    schedule: every day 11:00
+    timezone: Europe/Berlin
+-   description: Synonymly English Intermediate
+    url: /tweet/english/intermediate
+    schedule: every day 16:00
     timezone: Europe/Berlin
