@@ -5,5 +5,5 @@ cron:
     timezone: Europe/Berlin
 -   description: Synonymly English Intermediate
     url: /tweet/english/intermediate
-    schedule: every day 16:00
+    schedule: every day 17:00
     timezone: Europe/Berlin
