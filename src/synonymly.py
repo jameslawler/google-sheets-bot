@@ -13,7 +13,7 @@ class synonymly:
         self.language = language
         self.level = level
 
-    def run(self):
+    def run(self):       
         synonymsObj = synonyms()
         synonym = synonymsObj.random(self.language, self.level)
 
@@ -27,4 +27,4 @@ class synonymly:
         twitter.tweet(formattedMessage)
 
         auditObj = audit()
-        auditObj.save(self.language, synonym, "Twitter", formattedMessage)
+        auditObj.save(self.level, self.language, synonym, "Twitter", formattedMessage)
