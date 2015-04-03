@@ -22,7 +22,7 @@ class synonymly:
 
         formatterObj = formatter()
         formattedMessage = formatterObj.format(message, synonym)
-		
+
         twitter = twitterclient()
         twitter.tweet(formattedMessage)
 

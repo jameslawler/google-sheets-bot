@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import gaenv_lib
+
 import webapp2
-from synonymly import synonymly
+from src.synonymly import synonymly
 
 class EnglishBeginner(webapp2.RequestHandler):
     def get(self):
