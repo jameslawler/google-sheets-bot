@@ -1,14 +1,15 @@
 #audit
 
 import gspread
-import datetime
-import time
+from datetime import datetime
+from pytz import timezone
 from configuration import configuration
 
 class audit:
 
     def __init__(self):
         config = configuration("config.ini")
+        self.synonymlyTimezone = config.getSynonymlyTimezone()
         self.googleUsername = config.getGoogleUsername()
         self.googlePassword = config.getGooglePassword()
 
@@ -20,9 +21,10 @@ class audit:
         worksheet.append_row(newRow)
 
     def getAuditRow(self, level, language, synonym, network, message):
-        now = datetime.datetime.now()
-        currentDateTimeString = "%s-%s-%s %s:%s:%s" % (now.year, now.month, now.day, now.hour, now.minute, now.second)
-        
+        customTimeZone = timezone(self.synonymlyTimezone)
+        now = datetime.now(customTimeZone)
+        currentDateTimeString = now.strftime('%Y-%m-%d %H:%M:%S')
+
         return [  currentDateTimeString,
                   level,
                   synonym.word,
