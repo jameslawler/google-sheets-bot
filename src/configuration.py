@@ -8,6 +8,9 @@ class configuration:
         self.config = ConfigParser.ConfigParser()
         self.config.read(configurationFilePath)
 
+    def getSynonymlyTimezone(self):
+        return self.config.get("Synonymly", "Timezone")  
+
     def getGoogleUsername(self):
         return self.config.get("Google", "Username")    
 

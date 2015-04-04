@@ -33,9 +33,14 @@ This program requires a free Google App Engine account.
 ## Configuration
 
 This application requires Google and Twitter OAuth credentials. Rename the `config.ini.sample`
-to `config.ini`. Enter your credentials into the `config.ini` file.
+to `config.ini`. Enter your credentials into the `config.ini` file. The timezone is used to
+set the auditing date information. A list of available timezones is provided on the 
+[Timezones Wikipedia page](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 
 
 ```ini
+[Synonymly]
+Timezone: Europe/Amsterdam
+
 [Google]
 Username: myusername@gmail.com
 Password: mypassword

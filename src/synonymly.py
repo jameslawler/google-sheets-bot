@@ -1,6 +1,5 @@
 #synonymly
 
-import gaenv_lib
 from synonyms import synonyms
 from messages import messages
 from formatter import formatter

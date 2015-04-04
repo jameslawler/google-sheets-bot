@@ -16,6 +16,7 @@
 #
 
 import webapp2
+import gaenv_lib
 from src.synonymly import synonymly
 
 class EnglishBeginner(webapp2.RequestHandler):
