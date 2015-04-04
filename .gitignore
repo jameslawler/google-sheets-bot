@@ -1,4 +1,4 @@
-/src/gaenv_lib/*
+/gaenv_lib/*
 *.ini
 
 # Byte-compiled / optimized / DLL files
