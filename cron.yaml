@@ -1,9 +1,9 @@
 cron:
 -   description: Synonymly English Beginner
-    url: /tweet/english/beginner
+    url: /tweet/English/Beginner
     schedule: every day 11:00
     timezone: Europe/Berlin
 -   description: Synonymly English Intermediate
-    url: /tweet/english/intermediate
+    url: /tweet/English/Intermediate
     schedule: every day 17:00
     timezone: Europe/Berlin

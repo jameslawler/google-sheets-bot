@@ -14,13 +14,13 @@ class bot:
 
     def run(self):       
         dataObj = data()
-        row = dataObj.getRandom(self.fileName, self.sheetName)
+        messageData = dataObj.getRandom(self.fileName, self.sheetName)
 
         messagesObj = messages()
         messageTemplate = messagesObj.getRandom(self.fileName)
 
         formatterObj = formatter()
-        formattedMessage = formatterObj.format(messageTemplate, row)
+        formattedMessage = formatterObj.format(messageTemplate, messageData)
 
         twitter = twitterclient()
         twitter.tweet(formattedMessage)

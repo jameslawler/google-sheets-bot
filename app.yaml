@@ -5,13 +5,7 @@ api_version: 1
 threadsafe: yes
 
 handlers:
--   url: /tweet/english/beginner
-    script: main.app
-    login: admin
--   url: /tweet/english/intermediate
-    script: main.app
-    login: admin
--   url: /tweet/english/advanced
+-   url: /tweet/.*
     script: main.app
     login: admin
 

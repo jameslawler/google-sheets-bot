@@ -19,26 +19,12 @@ import webapp2
 import gaenv_lib
 from src.bot import bot
 
-class EnglishBeginner(webapp2.RequestHandler):
-    def get(self):
-        botObj = bot("English", "Beginner")
-        botObj.run()
-        self.response.write("Finished")
-
-class EnglishIntermediate(webapp2.RequestHandler):
-    def get(self):
-        botObj = bot("English", "Intermediate")
-        botObj.run()
-        self.response.write("Finished")
-
-class EnglishAdvanced(webapp2.RequestHandler):
-    def get(self):
-        botObj = bot("English", "Advanced")
+class TweetHandler(webapp2.RequestHandler):
+    def get(self, fileName, sheetName):
+        botObj = bot(fileName, sheetName)
         botObj.run()
         self.response.write("Finished")
 
 app = webapp2.WSGIApplication([
-    ('/tweet/english/beginner', EnglishBeginner),
-    ('/tweet/english/intermediate', EnglishIntermediate),
-    ('/tweet/english/advanced', EnglishAdvanced),
+    ('/tweet/(.*)/(.*)', TweetHandler),
 ], debug=True)

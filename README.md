@@ -30,6 +30,16 @@ This program requires a free Google App Engine account.
 2. Create a new application
 3. Update the app.yaml with your Application Id
 
+## Google Sheets
+
+This program requires a Google Sheet to exist under the Google username
+defined in the `config.ini` file. 
+
+1. Create a Google Sheet under the username defined in `config.ini`
+2. Create a Sheet called `Audit`
+3. Create a Sheet called `Messages`
+4. Create Sheet/s containing message data that can be substituted into the `Messages`
+
 ## Configuration
 
 This application requires Google and Twitter OAuth credentials. Rename the `config.ini.sample`
@@ -63,15 +73,12 @@ To locally debug with the Google App Engine SDK run the following command
 
 `python ~/<Google-App-Engine-SDK>/dev_appserver.py sheets-twitter-bot/`
 
-Then open a Browser and browse to [http://localhost:8080/tweet/english/beginner/](http://localhost:8080/tweet/english/beginner/)
-
 ## Endpoints
 
-This project has the following endpoints available
+Open a Browser and browse to a custom endpoint based on your Sheets configuration using
+the url structure:
 
-* /tweet/english/beginner/ - Tweet English at a Beginner level
-* /tweet/english/intermediate/ - Tweet English at a Intermediate level
-* /tweet/english/advanced/ - Tweet English at a Advanced level
+/tweet/{fileName}/{sheetName}
 
 ## Deploying to Google App Engine
 
