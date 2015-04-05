@@ -1,11 +1,11 @@
-# Synonymly Python Project (Google App Engine version)
+# Sheets Twitter Bot Python Project (Google App Engine version)
 
 This python application is a Google Sheets driven Twitter bot that
 posts regular messages by combining various pieces of data from a
 set of Google Sheets.
 
 The python application reads data from Google Sheets, posts a message
-to Twitter, and then writes an audit entry back into the Google Sheet file.
+to Twitter, and then writes an audit entry back into the Google Sheet.
 
 ## Requirements
 
@@ -17,8 +17,8 @@ to Twitter, and then writes an audit entry back into the Google Sheet file.
 
 ## Installation
 
-* `git clone https://github.com/jameslawler/synonymly-gae.git`
-* `mkvirtualenv synonymly` - to create a new python environment
+* `git clone https://github.com/jameslawler/sheets-twitter-bot.git`
+* `mkvirtualenv sheets-twitter-bot` - to create a new python environment
 * `pip install -r requirements.txt`
 * `gaenv` - to install locally all the python libraries
 
@@ -30,6 +30,16 @@ This program requires a free Google App Engine account.
 2. Create a new application
 3. Update the app.yaml with your Application Id
 
+## Google Sheets
+
+This program requires a Google Sheet to exist under the Google username
+defined in the `config.ini` file. 
+
+1. Create a Google Sheet under the username defined in `config.ini`
+2. Create a Sheet called `Audit`
+3. Create a Sheet called `Messages`
+4. Create Sheet/s containing message data that can be substituted into the `Messages`
+
 ## Configuration
 
 This application requires Google and Twitter OAuth credentials. Rename the `config.ini.sample`
@@ -38,7 +48,7 @@ set the auditing date information. A list of available timezones is provided on 
 [Timezones Wikipedia page](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 
 
 ```ini
-[Synonymly]
+[Bot]
 Timezone: Europe/Amsterdam
 
 [Google]
@@ -61,23 +71,20 @@ information provided by [Google](https://cloud.google.com/appengine/docs/python/
 
 To locally debug with the Google App Engine SDK run the following command
 
-`python ~/<Google-App-Engine-SDK>/dev_appserver.py synonymly-gae/`
-
-Then open a Browser and browse to [http://localhost:8080/tweet/english/beginner/](http://localhost:8080/tweet/english/beginner/)
+`python ~/<Google-App-Engine-SDK>/dev_appserver.py sheets-twitter-bot/`
 
 ## Endpoints
 
-This project has the following endpoints available
+Open a Browser and browse to a custom endpoint based on your Sheets configuration using
+the url structure:
 
-* /tweet/english/beginner/ - Tweet English at a Beginner level
-* /tweet/english/intermediate/ - Tweet English at a Intermediate level
-* /tweet/english/advanced/ - Tweet English at a Advanced level
+/tweet/{fileName}/{sheetName}
 
 ## Deploying to Google App Engine
 
 To deploy the project to your Google App Engine account run the following command
 
-`python ~/<Google-App-Engine-SDK>/appcfg.py update synonymly-gae/`
+`python ~/<Google-App-Engine-SDK>/appcfg.py update sheets-twitter-bot/`
 
 Enter your Google username and password credentials.
 

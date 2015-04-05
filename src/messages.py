@@ -11,9 +11,9 @@ class messages:
         self.googleUsername = config.getGoogleUsername()
         self.googlePassword = config.getGooglePassword()
 
-    def random(self, language):
+    def getRandom(self, fileName):
         googleSheets = gspread.login(self.googleUsername, self.googlePassword);
-        worksheet = googleSheets.open(language).worksheet("Messages");
+        worksheet = googleSheets.open(fileName).worksheet("Messages");
         messages = worksheet.get_all_values();
 
         numberOfMessages = len(messages) - 1
