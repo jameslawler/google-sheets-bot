@@ -17,24 +17,24 @@
 
 import webapp2
 import gaenv_lib
-from src.synonymly import synonymly
+from src.bot import bot
 
 class EnglishBeginner(webapp2.RequestHandler):
     def get(self):
-        synonymlyObj = synonymly("English", "Beginner")
-        synonymlyObj.run()
+        botObj = bot("English", "Beginner")
+        botObj.run()
         self.response.write("Finished")
 
 class EnglishIntermediate(webapp2.RequestHandler):
     def get(self):
-        synonymlyObj = synonymly("English", "Intermediate")
-        synonymlyObj.run()
+        botObj = bot("English", "Intermediate")
+        botObj.run()
         self.response.write("Finished")
 
 class EnglishAdvanced(webapp2.RequestHandler):
     def get(self):
-        synonymlyObj = synonymly("English", "Advanced")
-        synonymlyObj.run()
+        botObj = bot("English", "Advanced")
+        botObj.run()
         self.response.write("Finished")
 
 app = webapp2.WSGIApplication([

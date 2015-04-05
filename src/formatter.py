@@ -2,5 +2,5 @@
 
 class formatter:
 
-    def format(self, message, synonym):
-        return message.format(**synonym.getForFormatting())
+    def format(self, message, data):
+        return message.format(**data)
