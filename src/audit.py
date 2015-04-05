@@ -9,7 +9,7 @@ class audit:
 
     def __init__(self):
         config = configuration("config.ini")
-        self.synonymlyTimezone = config.getSynonymlyTimezone()
+        self.botTimezone = config.getBotTimezone()
         self.googleUsername = config.getGoogleUsername()
         self.googlePassword = config.getGooglePassword()
 
@@ -21,7 +21,7 @@ class audit:
         worksheet.append_row(newRow)
 
     def getAuditRow(self, level, language, synonym, network, message):
-        customTimeZone = timezone(self.synonymlyTimezone)
+        customTimeZone = timezone(self.botTimezone)
         now = datetime.now(customTimeZone)
         currentDateTimeString = now.strftime('%Y-%m-%d %H:%M:%S')
 

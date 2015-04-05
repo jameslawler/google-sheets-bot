@@ -1,11 +1,11 @@
-# Synonymly Python Project (Google App Engine version)
+# Sheets Twitter Bot Python Project (Google App Engine version)
 
 This python application is a Google Sheets driven Twitter bot that
 posts regular messages by combining various pieces of data from a
 set of Google Sheets.
 
 The python application reads data from Google Sheets, posts a message
-to Twitter, and then writes an audit entry back into the Google Sheet file.
+to Twitter, and then writes an audit entry back into the Google Sheet.
 
 ## Requirements
 
@@ -17,8 +17,8 @@ to Twitter, and then writes an audit entry back into the Google Sheet file.
 
 ## Installation
 
-* `git clone https://github.com/jameslawler/synonymly-gae.git`
-* `mkvirtualenv synonymly` - to create a new python environment
+* `git clone https://github.com/jameslawler/sheets-twitter-bot.git`
+* `mkvirtualenv sheets-twitter-bot` - to create a new python environment
 * `pip install -r requirements.txt`
 * `gaenv` - to install locally all the python libraries
 
@@ -38,7 +38,7 @@ set the auditing date information. A list of available timezones is provided on 
 [Timezones Wikipedia page](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones) 
 
 ```ini
-[Synonymly]
+[Bot]
 Timezone: Europe/Amsterdam
 
 [Google]
@@ -61,7 +61,7 @@ information provided by [Google](https://cloud.google.com/appengine/docs/python/
 
 To locally debug with the Google App Engine SDK run the following command
 
-`python ~/<Google-App-Engine-SDK>/dev_appserver.py synonymly-gae/`
+`python ~/<Google-App-Engine-SDK>/dev_appserver.py sheets-twitter-bot/`
 
 Then open a Browser and browse to [http://localhost:8080/tweet/english/beginner/](http://localhost:8080/tweet/english/beginner/)
 
@@ -77,7 +77,7 @@ This project has the following endpoints available
 
 To deploy the project to your Google App Engine account run the following command
 
-`python ~/<Google-App-Engine-SDK>/appcfg.py update synonymly-gae/`
+`python ~/<Google-App-Engine-SDK>/appcfg.py update sheets-twitter-bot/`
 
 Enter your Google username and password credentials.
 
