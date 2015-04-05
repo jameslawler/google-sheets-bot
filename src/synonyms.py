@@ -18,6 +18,11 @@ class synonyms:
         synonyms = worksheet.get_all_values();
 
         numberOfSynonyms = len(synonyms) - 1
+        headerSynonym = synonyms[0]
         randomSynonym = synonyms[randint(1,numberOfSynonyms)]
 
-        return synonym(randomSynonym[0], randomSynonym[1], randomSynonym[2], randomSynonym[3], randomSynonym[4])
+        synonymDictionary = {}
+        for i in range(len(headerSynonym)):
+            synonymDictionary[headerSynonym[i].lower()] = randomSynonym[i]
+
+        return synonym(synonymDictionary)
