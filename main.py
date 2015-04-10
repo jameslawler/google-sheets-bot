@@ -26,5 +26,5 @@ class TweetHandler(webapp2.RequestHandler):
         self.response.write("Finished")
 
 app = webapp2.WSGIApplication([
-    ('/tweet/(.*)/(.*)', TweetHandler),
+    ('/tweet/random/(.*)/(.*)', TweetHandler),
 ], debug=True)
