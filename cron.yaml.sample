@@ -1,0 +1,9 @@
+cron:
+-   description: Tweet a random quote from Einstein
+    url: /tweet/random/Quotes/Einstein
+    schedule: every day 09:00
+    timezone: Europe/Amsterdam
+-   description: Tweet from a sheet
+    url: /tweet/random/MyFileName/MySheetName
+    schedule: every day 18:00
+    timezone: Europe/Amsterdam

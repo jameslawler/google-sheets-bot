@@ -65,8 +65,25 @@ AccessTokenSecret:
 
 ### Scheduled tasks
 
-Configure your scheduled tasks by updating `cron.yaml` by following the
-information provided by [Google](https://cloud.google.com/appengine/docs/python/config/cron#Python_app_yaml_The_schedule_format)
+Configure your scheduled tasks by renaming `cron.yaml.sample` to `cron.yaml`. Update
+the file to configure your posts schedule by following the information provided by 
+[Google](https://cloud.google.com/appengine/docs/python/config/cron#Python_app_yaml_The_schedule_format)
+
+In the first example replace `Quotes` with the name of the Google Sheets file you want
+to read from. Then replace `Einstein` with the name of the Google Sheet tab you want
+to take the random row from.
+
+```yaml
+cron:
+-   description: Tweet a random quote from Einstein
+    url: /tweet/random/Quotes/Einstein
+    schedule: every day 09:00
+    timezone: Europe/Amsterdam
+-   description: Tweet from a generic sheet
+    url: /tweet/random/MyFileName/MySheetName
+    schedule: every day 18:00
+    timezone: Europe/Amsterdam
+```
 
 ## Deploying to Google App Engine
 
