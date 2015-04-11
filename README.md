@@ -1,7 +1,7 @@
-# Sheets Twitter Bot Python Project (Google App Engine version)
+# Google Sheets Bot (Google App Engine)
 
-This python application is a Google Sheets driven Twitter bot that
-posts regular messages by combining various pieces of data from a
+This python application is a Google Sheets driven bot that posts
+regular messages to Twitter by combining various pieces of data from a
 set of Google Sheets.
 
 The python application reads data from Google Sheets, posts a message
@@ -17,12 +17,13 @@ to Twitter, and then writes an audit entry back into the Google Sheet.
 
 ## Installation
 
-* `git clone https://github.com/jameslawler/sheets-twitter-bot.git`
-* `mkvirtualenv sheets-twitter-bot` - to create a new python environment
+* `git clone https://github.com/jameslawler/google-sheets-bot.git`
+* `mkvirtualenv google-sheets-bot` - to create a new python environment
 * `pip install -r requirements.txt`
 * `gaenv` - to install locally all the python libraries
 
-## Google App Engine
+## Requirements
+### Google App Engine
 
 This program requires a free Google App Engine account.
 
@@ -30,7 +31,7 @@ This program requires a free Google App Engine account.
 2. Create a new application
 3. Update the app.yaml with your Application Id
 
-## Google Sheets
+### Google Sheets
 
 This program requires a Google Sheet to exist under the Google username
 defined in the `config.ini` file. 
@@ -40,7 +41,7 @@ defined in the `config.ini` file.
 3. Create a Sheet called `Messages`
 4. Create Sheet/s containing message data that can be substituted into the `Messages`
 
-## Configuration
+### Configuration
 
 This application requires Google and Twitter OAuth credentials. Rename the `config.ini.sample`
 to `config.ini`. Enter your credentials into the `config.ini` file. The timezone is used to
@@ -62,35 +63,28 @@ AccessToken:
 AccessTokenSecret: 
 ```
 
-## Scheduled tasks
+### Scheduled tasks
 
 Configure your scheduled tasks by updating `cron.yaml` by following the
 information provided by [Google](https://cloud.google.com/appengine/docs/python/config/cron#Python_app_yaml_The_schedule_format)
-
-## Usage
-
-To locally debug with the Google App Engine SDK run the following command
-
-`python ~/<Google-App-Engine-SDK>/dev_appserver.py sheets-twitter-bot/`
-
-## Endpoints
-
-Open a Browser and browse to a custom endpoint based on your Sheets configuration using
-the url structure:
-
-/tweet/{fileName}/{sheetName}
 
 ## Deploying to Google App Engine
 
 To deploy the project to your Google App Engine account run the following command
 
-`python ~/<Google-App-Engine-SDK>/appcfg.py update sheets-twitter-bot/`
+`python ~/<Google-App-Engine-SDK>/appcfg.py update google-sheets-bot/`
 
 Enter your Google username and password credentials.
 
 Note: If you are unable to authenticate it may be because Google has blocked your
 attempt to login. You can get past this block by enabling less secure applications
 by browsing to [Less Secure Apps setting](https://www.google.com/settings/security/lesssecureapps)
+
+## Deploying locally
+
+To locally debug with the Google App Engine SDK run the following command
+
+`python ~/<Google-App-Engine-SDK>/dev_appserver.py google-sheets-bot/`
 
 ## Known Issues
 
