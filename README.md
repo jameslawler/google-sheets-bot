@@ -1,5 +1,12 @@
 # Google Sheets Bot (Google App Engine)
 
+## ATTENTION
+
+This code does not authenticate with Google since changes were made
+to the Google authentication API. It will be updated as soon as possible.
+
+## Introduction
+
 This python application is a Google Sheets driven bot that posts
 regular messages to Twitter by combining various pieces of data from a
 set of Google Sheets.
